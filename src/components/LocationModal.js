@@ -29,7 +29,6 @@ const StyledModal = styled.section`
   border-radius: 20px;
   background: grey;
   position: fixed;
-  position: absolute;
   width: 350px;
   height: 190px;
   top: 50%;

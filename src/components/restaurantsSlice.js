@@ -18,7 +18,7 @@ const restaurantSlice = createSlice({
     status: null,
   },
   extraReducers: {
-    [fetchRestaurants.peding]: (state, action) => {
+    [fetchRestaurants.pending]: (state, action) => {
       state.status = "loading";
     },
     [fetchRestaurants.fulfilled]: (state, { payload }) => {
