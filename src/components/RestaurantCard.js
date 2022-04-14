@@ -1,12 +1,15 @@
 import { Icon } from "@iconify/react";
+import { useState } from "react";
 import styled from "styled-components";
+import LocationModal from "./LocationModal";
 
 export default function RestaurantCard({ data }) {
+  const [show, setShow] = useState(false);
   return (
     <StyledCard>
       <p>rating</p>
       <StyledName>{data.name}</StyledName>
-      <StyledLike icon="akar-icons:heart" />
+      <StyledLike with="35px" height="35px" icon="akar-icons:heart" />
       <StyledAvailability>
         planning:
         {data.brewery_type === "planning" ? (
@@ -27,7 +30,13 @@ export default function RestaurantCard({ data }) {
           <Icon icon="ic:outline-do-not-disturb-on" />
         )}
       </StyledAvailability>
-      <StyledLocation icon="akar-icons:location" />
+      <StyledLocation
+        with="35px"
+        height="35px"
+        icon="akar-icons:location"
+        onClick={() => setShow(true)}
+      />
+      <LocationModal onClose={() => setShow(false)} show={show} data={data} />
     </StyledCard>
   );
 }
@@ -46,6 +55,7 @@ const StyledName = styled.h2`
 
 const StyledLike = styled(Icon)`
   grid-column: 4;
+  justify-self: end;
 `;
 
 const StyledAvailability = styled.p`
@@ -56,4 +66,5 @@ const StyledAvailability = styled.p`
 
 const StyledLocation = styled(Icon)`
   grid-column: 4;
+  justify-self: end;
 `;
