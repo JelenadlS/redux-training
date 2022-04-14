@@ -12,6 +12,7 @@ export default function HomePage() {
     dispatch(fetchRestaurants({ limit: 3 }));
   }, [dispatch]);
 
+  console.log(restaurants);
   return (
     <section>
       restaurants..
