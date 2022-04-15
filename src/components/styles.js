@@ -67,6 +67,11 @@ export const StyledRating = styled.p`
   gap: 5px;
 `;
 
+export const StyledScroll = styled.section`
+  display: flex;
+  overflow-x: auto;
+`;
+
 export const StyledStar = styled(Icon)`
   color: ${(props) => (props.color ? "yellow" : "black")};
 `;
