@@ -48,8 +48,29 @@ const bookmarksSlice = createSlice({
   },
 });
 
+const noOfRestaurantsSlice = createSlice({
+  name: "noOfRestaurants",
+  initialState: {
+    limit: 3,
+  },
+  reducers: {
+    increasedNoOfRestaurants(state, action) {
+      const number = action.payload;
+      state.limit = number + 2;
+    },
+    decreasedNoOfRestaurants(state, action) {
+      const number = action.payload;
+      state.limit = number - 2;
+    },
+  },
+});
+
 export const { restaurantLiked } = bookmarksSlice.actions;
+export const { increasedNoOfRestaurants, decreasedNoOfRestaurants } =
+  noOfRestaurantsSlice.actions;
+
 export default combineReducers({
   restaurantsReducer: restaurantSlice.reducer,
   bookmarksReducer: bookmarksSlice.reducer,
+  noOfRestaurantsReducer: noOfRestaurantsSlice.reducer,
 });

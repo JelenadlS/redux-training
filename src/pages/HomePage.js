@@ -1,20 +1,28 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 import RestaurantCard from "../components/RestaurantCard";
-import { fetchRestaurants } from "../components/restaurantsSlice";
+import {
+  fetchRestaurants,
+  increasedNoOfRestaurants,
+  decreasedNoOfRestaurants,
+} from "../components/restaurantsSlice";
 
 export default function HomePage() {
-  const [displayedRestaurants, setDisplayedRestaurants] = useState({
-    limit: 3,
-  });
   const dispatch = useDispatch();
   const restaurants = useSelector((state) => state.restaurantsReducer.list);
+  const noOfRestaurants = useSelector(
+    (state) => state.noOfRestaurantsReducer.limit
+  );
 
   useEffect(() => {
-    dispatch(fetchRestaurants(displayedRestaurants));
-  }, [dispatch, displayedRestaurants]);
-  console.log(displayedRestaurants);
+    dispatch(
+      fetchRestaurants({
+        limit: noOfRestaurants,
+      })
+    );
+  }, [dispatch, noOfRestaurants]);
+
   return (
     <section>
       <StyledList>
@@ -24,8 +32,17 @@ export default function HomePage() {
           </li>
         ))}
       </StyledList>
-      <button type="button" onClick={setDisplayedRestaurants}>
+      <button
+        type="button"
+        onClick={() => dispatch(increasedNoOfRestaurants(noOfRestaurants))}
+      >
         More
+      </button>
+      <button
+        type="button"
+        onClick={() => dispatch(decreasedNoOfRestaurants(noOfRestaurants))}
+      >
+        Less
       </button>
     </section>
   );
