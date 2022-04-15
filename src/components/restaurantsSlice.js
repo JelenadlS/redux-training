@@ -21,20 +21,6 @@ const restaurantSlice = createSlice({
     list: [],
     status: null,
   },
-  // reducers: {
-  //   // restaurantLikedUpdated(state, action) {
-  //   //   const { id, like } = action.payload;
-  //   //   const existingRestaurant = state.find(
-  //   //     (restaurant) => restaurant.id === id
-  //   //   );
-  //   //   if (existingRestaurant) {
-  //   //     existingRestaurant.like = like;
-  //   //   }
-  //   // },
-  //   restaurantLikedUpdated(state, action) {
-  //     state.list = [...state.list, ...action.payload];
-  //   },
-  // },
   extraReducers: {
     [fetchRestaurants.pending]: (state, action) => {
       state.status = "loading";
@@ -48,16 +34,21 @@ const restaurantSlice = createSlice({
     },
   },
 });
-//export const { restaurantLikedUpdated } = restaurantSlice.actions;
 
 const bookmarksSlice = createSlice({
   name: "bookmarks",
   initialState: {
-    list: [],
-    status: null,
+    data: {},
+  },
+  reducers: {
+    restaurantLiked(state, action) {
+      const id = action.payload;
+      state.data[id] = !state.data[id];
+    },
   },
 });
 
+export const { restaurantLiked } = bookmarksSlice.actions;
 export default combineReducers({
   restaurantsReducer: restaurantSlice.reducer,
   bookmarksReducer: bookmarksSlice.reducer,

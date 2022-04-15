@@ -1,32 +1,17 @@
 import { Icon } from "@iconify/react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 
 import LocationModal from "./LocationModal";
-//import { restaurantLikedUpdated } from "./restaurantsSlice";
+import { restaurantLiked } from "./restaurantsSlice";
 
 export default function RestaurantCard({ data }) {
   const [show, setShow] = useState(false);
+  const dispatch = useDispatch();
 
-  //const restaurants = useSelector((state) => state.restaurants.list);
-  // const dispatch = useDispatch();
+  const bookmarks = useSelector((state) => state.bookmarksReducer.data);
 
-  // useEffect(() => {
-  //   dispatch(restaurantLikedUpdated({ id: data.id, like }));
-  // }, [like, dispatch]);
-
-  // const handleLike = () => {
-  //   setLike(!like);
-  // };
-
-  // mit Redux, ändert sich aber noch nichts da
-  // const handleLike = () => {
-  //     dispatch(restaurantLikedUpdated({ id: data.id, liked: !liked }));
-
-  // };
-
-  console.log(data);
   return (
     <StyledCard>
       <p>rating</p>
@@ -35,8 +20,8 @@ export default function RestaurantCard({ data }) {
         with="35px"
         height="35px"
         icon="akar-icons:heart"
-        //  onClick={handleLike}
-        // color={like}
+        onClick={() => dispatch(restaurantLiked(data.id))}
+        color={bookmarks[data.id]}
       />
       <StyledAvailability>
         planning:
