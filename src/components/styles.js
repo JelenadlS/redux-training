@@ -57,6 +57,11 @@ export const StyledName = styled.h2`
   grid-column: 2 / 4;
 `;
 
+export const StyledNav = styled.nav`
+  justify-self: end;
+  display: flex;
+  gap: 10px;
+`;
 export const StyledRating = styled.p`
   display: flex;
   gap: 5px;

@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import styled from "styled-components";
+import { StyledNav } from "./styles";
 
 export default function Navigation() {
   return (
@@ -7,7 +7,7 @@ export default function Navigation() {
       <NavLink to="/">
         <button>Home</button>
       </NavLink>
-      <NavLink to="">
+      <NavLink to="/picture">
         <button>Pictures</button>
       </NavLink>
       <NavLink to="">
@@ -16,9 +16,3 @@ export default function Navigation() {
     </StyledNav>
   );
 }
-
-const StyledNav = styled.nav`
-  justify-self: end;
-  display: flex;
-  gap: 10px;
-`;
