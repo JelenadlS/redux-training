@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Availability from "./Availability";
 import LocationModal from "./LocationModal";
 import Rating from "./Rating";
-import { restaurantLiked } from "./restaurantsSlice";
+import { restaurantLiked } from "../redux/Slices";
 import { StyledCard, StyledName, StyledLike, StyledLocation } from "./styles";
 
 export default function RestaurantCard({ data }) {

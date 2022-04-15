@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import reducer from "../components/restaurantsSlice";
+import reducer from "./Slices";
 
 export default configureStore({
   reducer,

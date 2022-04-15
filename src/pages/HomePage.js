@@ -6,7 +6,7 @@ import {
   fetchRestaurants,
   increasedNoOfRestaurants,
   decreasedNoOfRestaurants,
-} from "../components/restaurantsSlice";
+} from "../redux/Slices";
 
 export default function HomePage() {
   const dispatch = useDispatch();
