@@ -65,12 +65,31 @@ const noOfRestaurantsSlice = createSlice({
   },
 });
 
+const currentPictureSlice = createSlice({
+  name: "currentPicture",
+  initialState: {
+    start: 0,
+  },
+  reducers: {
+    nextPicture(state, action) {
+      const currentIndex = action.payload;
+      state.start = currentIndex + 1;
+    },
+    prevPicture(state, action) {
+      const currentIndex = action.payload;
+      state.start = currentIndex - 1;
+    },
+  },
+});
+
 export const { restaurantLiked } = bookmarksSlice.actions;
 export const { increasedNoOfRestaurants, decreasedNoOfRestaurants } =
   noOfRestaurantsSlice.actions;
+export const { nextPicture, prevPicture } = currentPictureSlice.actions;
 
 export default combineReducers({
   restaurantsReducer: restaurantSlice.reducer,
   bookmarksReducer: bookmarksSlice.reducer,
   noOfRestaurantsReducer: noOfRestaurantsSlice.reducer,
+  currentPictureReducer: currentPictureSlice.reducer,
 });

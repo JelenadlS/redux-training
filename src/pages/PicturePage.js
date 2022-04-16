@@ -1,30 +1,24 @@
-import { useState } from "react";
+import { useSelector } from "react-redux";
 
 import Button from "../components/Button";
 import Pictures from "../components/Pictures";
 import { StyledPictures } from "../components/styles";
 
 export default function PicturePage() {
-  const [currentPicture, setCurrentPicture] = useState(0);
+  const currentPicture = useSelector(
+    (state) => state.currentPictureReducer.start
+  );
 
   return (
     <StyledPictures>
-      <Button
-        prev="prev"
-        setCurrentPicture={setCurrentPicture}
-        currentPicture={currentPicture}
-      />
+      <Button />
       <img
-        width="200"
-        height="150"
+        width="300"
+        height="200"
         alt={`${Pictures[currentPicture].name}`}
         src={Pictures[currentPicture].image}
       />
-      <Button
-        next="next"
-        setCurrentPicture={setCurrentPicture}
-        currentPicture={currentPicture}
-      />
+      <Button next="next" />
     </StyledPictures>
   );
 }
