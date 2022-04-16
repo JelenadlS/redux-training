@@ -11,6 +11,11 @@ export const StyledAvailability = styled.p`
   gap: 10px;
 `;
 
+export const StyledButton = styled.button`
+  border: none;
+  background-color: transparent;
+`;
+
 export const StyledCard = styled.article`
   border: 1px solid grey;
   display: grid;
@@ -62,14 +67,16 @@ export const StyledNav = styled.nav`
   display: flex;
   gap: 10px;
 `;
+
+export const StyledPictures = styled.section`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`;
+
 export const StyledRating = styled.p`
   display: flex;
   gap: 5px;
-`;
-
-export const StyledScroll = styled.section`
-  display: flex;
-  overflow-x: auto;
 `;
 
 export const StyledStar = styled(Icon)`
