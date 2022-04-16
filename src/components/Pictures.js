@@ -9,15 +9,15 @@ import Wandern from "../images/Wandern.jpg";
 import Wohnwagen from "../images/Wohnwagen.jpg";
 
 const Pictures = [
-  { id: "1", name: "ausblick", image: Ausblick },
-  { id: "2", name: "freunde", image: Freunde },
-  { id: "3", name: "see", image: See },
-  { id: "4", name: "strandAbend", image: StrandAbend },
-  { id: "5", name: "stranddecke", image: Stranddecke },
-  { id: "7", name: "strandLesen", image: StrandLesen },
-  { id: "8", name: "strandliegen", image: Strandliegen },
-  { id: "9", name: "wandern", image: Wandern },
-  { id: "10", name: "wohnwagen", image: Wohnwagen },
+  { name: "ausblick", image: Ausblick },
+  { name: "freunde", image: Freunde },
+  { name: "see", image: See },
+  { name: "strandAbend", image: StrandAbend },
+  { name: "stranddecke", image: Stranddecke },
+  { name: "strandLesen", image: StrandLesen },
+  { name: "strandliegen", image: Strandliegen },
+  { name: "wandern", image: Wandern },
+  { name: "wohnwagen", image: Wohnwagen },
 ];
 
 export default Pictures;
