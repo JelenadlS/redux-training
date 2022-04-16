@@ -10,7 +10,7 @@ export default function Navigation() {
       <NavLink to="/picture">
         <button>Pictures</button>
       </NavLink>
-      <NavLink to="">
+      <NavLink to="/aboutUs">
         <button>About us</button>
       </NavLink>
     </StyledNav>
