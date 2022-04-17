@@ -24,11 +24,11 @@ export default function HomePage() {
   }, [dispatch, noOfRestaurants]);
 
   return (
-    <StyledHomePage>
+    <StyledHomePage aria-label="home page">
       <h1>restaurants</h1>
-      <StyledList>
+      <StyledList aria-label="list of restaurants">
         {restaurants.map((restaurant) => (
-          <li key={restaurant.id}>
+          <li key={restaurant.id} aria-label={restaurant.name}>
             <RestaurantCard data={restaurant} />
           </li>
         ))}

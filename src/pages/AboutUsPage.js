@@ -9,14 +9,16 @@ export default function AboutUsPage() {
   );
 
   return (
-    <StyledAbout>
+    <StyledAbout aria-label="about page">
       <h1>about us</h1>
       {AboutText.map((detail, index) => {
         return (
-          <article key={index}>
-            <p>{detail.title}</p>
+          <article key={index} aria-label={detail.title}>
+            <h2>{detail.title}</h2>
             <AboutButton detail={detail} />
-            {showMoreInfo[detail.title] && <p>{detail.details}</p>}
+            {showMoreInfo[detail.title] && (
+              <p aria-label="further information">{detail.details}</p>
+            )}
           </article>
         );
       })}

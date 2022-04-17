@@ -14,6 +14,7 @@ export default function PictureButton({ next }) {
 
   return (
     <StyledButton
+      aria-label={`${next ? "next picture" : "previous picture"}`}
       type="button"
       onClick={() =>
         dispatch(

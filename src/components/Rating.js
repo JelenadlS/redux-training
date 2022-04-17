@@ -24,10 +24,15 @@ export default function Rating({ data }) {
   ];
 
   return (
-    <StyledRating>
-      {(5 / 10) * (data.phone === null ? "0" : data.phone.slice(0, 1))}
+    <StyledRating
+      aria-label={`rating of 
+        ${
+          (5 / 10) *
+          (data.phone === null ? "no rating available" : data.phone.slice(0, 1))
+        }`}
+    >
       {rating.map((rate, index) => (
-        <li key={index}>{rate}</li>
+        <span key={index}>{rate}</span>
       ))}
     </StyledRating>
   );

@@ -4,7 +4,7 @@ import StrandAbend from "../images/StrandAbend.jpg";
 
 export default function Navigation() {
   return (
-    <StyledNav>
+    <StyledNav aria-label="navigation">
       <NavLink to="/">
         <button>Home</button>
       </NavLink>

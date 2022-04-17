@@ -1,11 +1,16 @@
-import { StyledModal, StyledAddress, StyledClose } from "./styles";
+import {
+  StyledModal,
+  StyledAddress,
+  StyledClose,
+  StyledButton,
+} from "./styles";
 
 export default function LocationModal({ onClose, show, data }) {
   if (!show) {
     return null;
   }
   return (
-    <StyledModal>
+    <StyledModal aria-label="information about location">
       <StyledAddress>
         {data.street} <br />
         {`${data.city} 
@@ -13,12 +18,17 @@ export default function LocationModal({ onClose, show, data }) {
         <br />
         {data.country}
       </StyledAddress>
-      <StyledClose
-        with="35px"
-        height="35px"
-        icon="ant-design:close-circle-outlined"
+      <StyledButton
+        type="button"
+        aria-label="close modal button"
         onClick={onClose}
-      />
+      >
+        <StyledClose
+          with="35px"
+          height="35px"
+          icon="ant-design:close-circle-outlined"
+        />
+      </StyledButton>
     </StyledModal>
   );
 }

@@ -10,12 +10,12 @@ function App() {
   return (
     <StyledAppGrid>
       <Navigation />
-      <Routes className="App">
+      <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/picture" element={<PicturePage />} />
         <Route path="/aboutUs" element={<AboutUsPage />} />
       </Routes>
-      <StyledFooter>copyright by xyz</StyledFooter>
+      <StyledFooter aria-label="footer">copyright by xyz</StyledFooter>
     </StyledAppGrid>
   );
 }

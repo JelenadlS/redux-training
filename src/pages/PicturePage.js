@@ -10,7 +10,7 @@ export default function PicturePage() {
   );
 
   return (
-    <StyledPicturePage>
+    <StyledPicturePage aria-label="picture page">
       <h1>pictures</h1>
       <StyledPictures>
         <PictureButton />
