@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import styled from "styled-components";
 import RestaurantCard from "../components/RestaurantCard";
 import {
   fetchRestaurants,
   increasedNoOfRestaurants,
   decreasedNoOfRestaurants,
 } from "../redux/Slices";
+import { StyledList, StyledHomePage } from "../components/styles";
 
 export default function HomePage() {
   const dispatch = useDispatch();
@@ -24,7 +24,8 @@ export default function HomePage() {
   }, [dispatch, noOfRestaurants]);
 
   return (
-    <section>
+    <StyledHomePage>
+      <h1>restaurants</h1>
       <StyledList>
         {restaurants.map((restaurant) => (
           <li key={restaurant.id}>
@@ -44,10 +45,6 @@ export default function HomePage() {
       >
         Less
       </button>
-    </section>
+    </StyledHomePage>
   );
 }
-
-const StyledList = styled.ul`
-  list-style: none;
-`;

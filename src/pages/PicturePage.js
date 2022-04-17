@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
 
-import Button from "../components/Button";
+import PictureButton from "../components/PictureButton";
 import Pictures from "../components/Pictures";
-import { StyledPictures } from "../components/styles";
+import { StyledPictures, StyledPicturePage } from "../components/styles";
 
 export default function PicturePage() {
   const currentPicture = useSelector(
@@ -10,15 +10,18 @@ export default function PicturePage() {
   );
 
   return (
-    <StyledPictures>
-      <Button />
-      <img
-        width="300"
-        height="200"
-        alt={`${Pictures[currentPicture].name}`}
-        src={Pictures[currentPicture].image}
-      />
-      <Button next="next" />
-    </StyledPictures>
+    <StyledPicturePage>
+      <h1>pictures</h1>
+      <StyledPictures>
+        <PictureButton />
+        <img
+          width="300"
+          height="200"
+          alt={`${Pictures[currentPicture].name}`}
+          src={Pictures[currentPicture].image}
+        />
+        <PictureButton next="next" />
+      </StyledPictures>
+    </StyledPicturePage>
   );
 }

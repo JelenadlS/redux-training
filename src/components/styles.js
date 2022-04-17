@@ -1,6 +1,10 @@
 import { Icon } from "@iconify/react";
 import styled from "styled-components";
 
+export const StyledAbout = styled.section`
+  text-align: center;
+`;
+
 export const StyledAddress = styled.p`
   text-align: center;
 `;
@@ -30,6 +34,10 @@ export const StyledClose = styled(Icon)`
   top: -10px;
 `;
 
+export const StyledHomePage = styled.section`
+  text-align: center;
+`;
+
 export const StyledLike = styled(Icon)`
   grid-column: 4;
   justify-self: end;
@@ -37,6 +45,9 @@ export const StyledLike = styled(Icon)`
   &:active {
     transform: scale(0.9);
   }
+`;
+export const StyledList = styled.ul`
+  list-style: none;
 `;
 
 export const StyledLocation = styled(Icon)`
@@ -68,10 +79,14 @@ export const StyledNav = styled.nav`
   gap: 10px;
 `;
 
-export const StyledPictures = styled.section`
+export const StyledPictures = styled.span`
   display: flex;
   align-items: center;
   gap: 10px;
+`;
+
+export const StyledPicturePage = styled.section`
+  text-align: center;
 `;
 
 export const StyledRating = styled.p`

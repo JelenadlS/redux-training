@@ -1,11 +1,11 @@
 import { Icon } from "@iconify/react";
 import { useSelector, useDispatch } from "react-redux";
 
-import Pictures from "../components/Pictures";
-import { StyledButton } from "../components/styles";
+import Pictures from "./Pictures";
+import { StyledButton } from "./styles";
 import { nextPicture, prevPicture } from "../redux/Slices";
 
-export default function Button({ next }) {
+export default function PictureButton({ next }) {
   const dispatch = useDispatch();
   const currentPicture = useSelector(
     (state) => state.currentPictureReducer.start

@@ -82,14 +82,29 @@ const currentPictureSlice = createSlice({
   },
 });
 
+const showMoreInfoSlice = createSlice({
+  name: "showMoreInfo",
+  initialState: {
+    showMoreInfo: {},
+  },
+  reducers: {
+    handleShowMoreClick(state, action) {
+      const currentState = action.payload;
+      state.showMoreInfo[currentState] = !state.showMoreInfo[currentState];
+    },
+  },
+});
+
 export const { restaurantLiked } = bookmarksSlice.actions;
 export const { increasedNoOfRestaurants, decreasedNoOfRestaurants } =
   noOfRestaurantsSlice.actions;
 export const { nextPicture, prevPicture } = currentPictureSlice.actions;
+export const { handleShowMoreClick } = showMoreInfoSlice.actions;
 
 export default combineReducers({
   restaurantsReducer: restaurantSlice.reducer,
   bookmarksReducer: bookmarksSlice.reducer,
   noOfRestaurantsReducer: noOfRestaurantsSlice.reducer,
   currentPictureReducer: currentPictureSlice.reducer,
+  showMoreInfoReducer: showMoreInfoSlice.reducer,
 });
