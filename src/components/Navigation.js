@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
-import { StyledNav } from "./styles";
+import { StyledNav, StyledLogo } from "./styles";
+import StrandAbend from "../images/StrandAbend.jpg";
 
 export default function Navigation() {
   return (
@@ -13,6 +14,7 @@ export default function Navigation() {
       <NavLink to="/aboutUs">
         <button>About us</button>
       </NavLink>
+      <StyledLogo width="120" height="70" alt="logo" src={StrandAbend} />
     </StyledNav>
   );
 }

@@ -55,6 +55,13 @@ export const StyledLocation = styled(Icon)`
   justify-self: end;
 `;
 
+export const StyledLogo = styled.img`
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  left: 10px;
+`;
+
 export const StyledModal = styled.section`
   border: none;
   border-radius: 20px;
