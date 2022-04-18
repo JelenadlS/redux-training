@@ -6,7 +6,7 @@ import {
   increasedNoOfRestaurants,
   decreasedNoOfRestaurants,
 } from "../redux/Slices";
-import { StyledList, StyledHomePage } from "../components/styles";
+import { StyledList, StyledPage } from "../components/styles";
 
 export default function HomePage() {
   const dispatch = useDispatch();
@@ -24,7 +24,7 @@ export default function HomePage() {
   }, [dispatch, noOfRestaurants]);
 
   return (
-    <StyledHomePage aria-label="home page">
+    <StyledPage aria-label="home page">
       <h1>restaurants</h1>
       <StyledList aria-label="list of restaurants">
         {restaurants.map((restaurant) => (
@@ -45,6 +45,6 @@ export default function HomePage() {
       >
         Less
       </button>
-    </StyledHomePage>
+    </StyledPage>
   );
 }

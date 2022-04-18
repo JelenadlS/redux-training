@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { AboutText } from "../components/AboutText";
 import AboutButton from "../components/AboutButton";
-import { StyledAbout } from "../components/styles";
+import { StyledPage } from "../components/styles";
 
 export default function AboutUsPage() {
   const showMoreInfo = useSelector(
@@ -9,7 +9,7 @@ export default function AboutUsPage() {
   );
 
   return (
-    <StyledAbout aria-label="about page">
+    <StyledPage aria-label="about page">
       <h1>about us</h1>
       {AboutText.map((detail, index) => {
         return (
@@ -22,6 +22,6 @@ export default function AboutUsPage() {
           </article>
         );
       })}
-    </StyledAbout>
+    </StyledPage>
   );
 }

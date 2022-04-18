@@ -1,10 +1,6 @@
 import { Icon } from "@iconify/react";
 import styled from "styled-components";
 
-export const StyledAbout = styled.main`
-  text-align: center;
-`;
-
 export const StyledAddress = styled.p`
   text-align: center;
 `;
@@ -32,10 +28,6 @@ export const StyledClose = styled(Icon)`
   position: absolute;
   right: -10px;
   top: -10px;
-`;
-
-export const StyledHomePage = styled.main`
-  text-align: center;
 `;
 
 export const StyledLike = styled(Icon)`
@@ -71,7 +63,6 @@ export const StyledModal = styled.section`
   height: 190px;
   top: 50%;
   left: 50%;
-  padding-top: 10px;
   margin-top: -140px;
   margin-left: -175px;
 `;
@@ -81,9 +72,13 @@ export const StyledName = styled.h2`
 `;
 
 export const StyledNav = styled.nav`
-  justify-self: end;
   display: flex;
+  justify-self: end;
   gap: 10px;
+`;
+
+export const StyledPage = styled.main`
+  text-align: center;
 `;
 
 export const StyledPictures = styled.span`
@@ -92,19 +87,11 @@ export const StyledPictures = styled.span`
   gap: 10px;
 `;
 
-export const StyledPicturePage = styled.main`
-  text-align: center;
-`;
-
 export const StyledRating = styled.p`
   display: flex;
   gap: 5px;
 `;
 
 export const StyledStar = styled(Icon)`
-  color: ${(props) => (props.color ? "yellow" : "black")};
-`;
-
-export const StyledStarHalf = styled(Icon)`
   color: ${(props) => (props.color ? "yellow" : "black")};
 `;

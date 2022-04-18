@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 
 import PictureButton from "../components/PictureButton";
 import Pictures from "../components/Pictures";
-import { StyledPictures, StyledPicturePage } from "../components/styles";
+import { StyledPictures, StyledPage } from "../components/styles";
 
 export default function PicturePage() {
   const currentPicture = useSelector(
@@ -10,7 +10,7 @@ export default function PicturePage() {
   );
 
   return (
-    <StyledPicturePage aria-label="picture page">
+    <StyledPage aria-label="picture page">
       <h1>pictures</h1>
       <StyledPictures>
         <PictureButton />
@@ -22,6 +22,6 @@ export default function PicturePage() {
         />
         <PictureButton next="next" />
       </StyledPictures>
-    </StyledPicturePage>
+    </StyledPage>
   );
 }

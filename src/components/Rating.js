@@ -1,10 +1,10 @@
 import { Icon } from "@iconify/react";
 
-import { StyledStar, StyledStarHalf, StyledRating } from "./styles";
+import { StyledStar, StyledRating } from "./styles";
 
 export default function Rating({ data }) {
   const filledStar = <StyledStar color icon="bi:star-fill" />;
-  const halfStar = <StyledStarHalf color icon="bi:star-half" />;
+  const halfStar = <StyledStar color icon="bi:star-half" />;
   const emptyStar = <Icon color icon="bi:star" />;
   const calculatedRating =
     (5 / 10) * (data.phone === null ? "0" : data.phone.slice(0, 1));
