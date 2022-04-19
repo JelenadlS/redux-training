@@ -21,17 +21,13 @@ export const StyledButton = styled.button`
 export const StyledCard = styled.section`
   border: 1px solid grey;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 2fr auto;
   grid-template-rows: repeat(2, auto);
   margin: 15px;
 `;
 
 export const StyledFooter = styled.footer`
   justify-self: center;
-`;
-
-export const StyledLike = styled(Icon)`
-  justify-self: end;
 `;
 
 export const StyledList = styled.ul`
