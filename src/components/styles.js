@@ -5,8 +5,21 @@ export const StyledAppGrid = styled.div`
   display: grid;
   grid-template-rows: 48px 1fr 48px;
 `;
+
+export const StyledCard = styled.section`
+  border: 1px solid grey;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: repeat(2, auto);
+  margin: 15px;
+`;
+
 export const StyledFooter = styled.footer`
   justify-self: center;
+`;
+
+export const StyledList = styled.ul`
+  list-style: none;
 `;
 
 export const StyledMain = styled.main`

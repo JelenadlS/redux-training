@@ -1,7 +1,8 @@
-import { StyledMain } from "../components/styles";
+import { StyledMain, StyledList } from "../components/styles";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { fetchRestaurants } from "../redux/Slices";
+import RestaurantCard from "../components/RestaurantCard";
 
 export default function HomePage() {
   const dispatch = useDispatch();
@@ -14,15 +15,15 @@ export default function HomePage() {
   return (
     <StyledMain aria-label="home page">
       <h1>Home page</h1>
-      <ul aria-label="list of restaurants">
+      <StyledList aria-label="list of restaurants">
         {restaurants.map((restaurant) => {
           return (
             <li key={restaurant.id} aria-label="further details">
-              {restaurant.name}
+              <RestaurantCard data={restaurant} />
             </li>
           );
         })}
-      </ul>
+      </StyledList>
     </StyledMain>
   );
 }
