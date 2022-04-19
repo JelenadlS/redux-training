@@ -30,6 +30,13 @@ export const StyledFooter = styled.footer`
   justify-self: center;
 `;
 
+export const StyledLike = styled(Icon)`
+  color: ${(props) => (props.color ? "green" : "black")};
+  &:active {
+    transform: scale(0.9);
+  }
+`;
+
 export const StyledList = styled.ul`
   list-style: none;
 `;

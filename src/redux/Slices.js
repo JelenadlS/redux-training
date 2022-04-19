@@ -1,4 +1,8 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import {
+  createSlice,
+  createAsyncThunk,
+  combineReducers,
+} from "@reduxjs/toolkit";
 
 export const fetchRestaurants = createAsyncThunk(
   "restaurants/fetchRestaurants",
@@ -33,4 +37,21 @@ const restaurantSlice = createSlice({
   },
 });
 
-export default restaurantSlice.reducer;
+const favoritesSlice = createSlice({
+  name: "favorites",
+  initialState: {
+    data: {},
+  },
+  reducers: {
+    handleLikeClick: (state, action) => {
+      const id = action.payload;
+      state.data[id] = !state.data[id];
+    },
+  },
+});
+
+export const { handleLikeClick } = favoritesSlice.actions;
+export default combineReducers({
+  restaurantsReducer: restaurantSlice.reducer,
+  favoritesReducer: favoritesSlice.reducer,
+});

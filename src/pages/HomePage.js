@@ -6,7 +6,7 @@ import RestaurantCard from "../components/RestaurantCard";
 
 export default function HomePage() {
   const dispatch = useDispatch();
-  const restaurants = useSelector((state) => state.restaurant.list);
+  const restaurants = useSelector((state) => state.restaurantsReducer.list);
 
   useEffect(() => {
     dispatch(fetchRestaurants());
