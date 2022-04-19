@@ -7,6 +7,12 @@ export const StyledAppGrid = styled.div`
   grid-template-rows: 48px 1fr 48px;
 `;
 
+export const StyledAvailability = styled.p`
+  grid-column: 1/ 3;
+  display: flex;
+  gap: 10px;
+`;
+
 export const StyledButton = styled.button`
   border: none;
   background-color: transparent;
