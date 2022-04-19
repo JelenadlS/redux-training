@@ -5,6 +5,13 @@ export const StyledAppGrid = styled.div`
   display: grid;
   grid-template-rows: 48px 1fr 48px;
 `;
+export const StyledFooter = styled.footer`
+  justify-self: center;
+`;
+
+export const StyledMain = styled.main`
+  justify-self: center;
+`;
 
 export const StyledNavigation = styled.nav`
   justify-self: end;
