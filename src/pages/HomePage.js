@@ -1,16 +1,23 @@
 import { StyledMain, StyledList } from "../components/styles";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { fetchRestaurants } from "../redux/Slices";
+import {
+  fetchRestaurants,
+  loadMoreRestaurants,
+  loadLessRestaurants,
+} from "../redux/Slices";
 import RestaurantCard from "../components/RestaurantCard";
 
 export default function HomePage() {
   const dispatch = useDispatch();
   const restaurants = useSelector((state) => state.restaurantsReducer.list);
+  const noOfRestaurants = useSelector(
+    (state) => state.noOfRestaurantsReducer.limit
+  );
 
   useEffect(() => {
-    dispatch(fetchRestaurants());
-  }, [dispatch]);
+    dispatch(fetchRestaurants({ limit: noOfRestaurants }));
+  }, [dispatch, noOfRestaurants]);
 
   return (
     <StyledMain aria-label="home page">
@@ -24,6 +31,20 @@ export default function HomePage() {
           );
         })}
       </StyledList>
+      <button
+        type="button"
+        aria-label="load more restaurants"
+        onClick={() => dispatch(loadMoreRestaurants(noOfRestaurants))}
+      >
+        More
+      </button>
+      <button
+        type="button"
+        aria-label="load less restaurants"
+        onClick={() => dispatch(loadLessRestaurants(noOfRestaurants))}
+      >
+        Less
+      </button>
     </StyledMain>
   );
 }

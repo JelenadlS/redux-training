@@ -6,11 +6,11 @@ import {
 
 export const fetchRestaurants = createAsyncThunk(
   "restaurants/fetchRestaurants",
-  async () => {
+  async ({ limit }) => {
     try {
-      return fetch(`https://api.openbrewerydb.org/breweries`).then((response) =>
-        response.json()
-      );
+      return fetch(
+        `https://api.openbrewerydb.org/breweries?per_page=${limit}`
+      ).then((response) => response.json());
     } catch (error) {
       console.log(error);
     }
@@ -50,8 +50,28 @@ const favoritesSlice = createSlice({
   },
 });
 
+const noOfRestaurantsSlice = createSlice({
+  name: "noOfRestaurants",
+  initialState: {
+    limit: 3,
+  },
+  reducers: {
+    loadMoreRestaurants: (state, action) => {
+      const totalAmountLoaded = action.payload;
+      state.limit = totalAmountLoaded + 3;
+    },
+    loadLessRestaurants: (state, action) => {
+      const totalAmountLoaded = action.payload;
+      state.limit = totalAmountLoaded - 3;
+    },
+  },
+});
+
 export const { handleLikeClick } = favoritesSlice.actions;
+export const { loadMoreRestaurants, loadLessRestaurants } =
+  noOfRestaurantsSlice.actions;
 export default combineReducers({
   restaurantsReducer: restaurantSlice.reducer,
   favoritesReducer: favoritesSlice.reducer,
+  noOfRestaurantsReducer: noOfRestaurantsSlice.reducer,
 });
