@@ -1,3 +1,4 @@
+import { Icon } from "@iconify/react";
 import styled from "styled-components";
 
 export const StyledAppGrid = styled.div`
@@ -30,4 +31,12 @@ export const StyledNavigation = styled.nav`
   justify-self: end;
   display: flex;
   gap: 10px;
+`;
+
+export const StyledRating = styled.p`
+  display: flex;
+  gap: 5px;
+`;
+export const StyledStar = styled(Icon)`
+  color: yellow;
 `;
