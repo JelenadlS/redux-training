@@ -13,7 +13,12 @@ export default function Availability({ availability }) {
       {Object.entries(burgertypes).map((type, index) => {
         const availabilityStatus = type[1];
         return (
-          <span key={index}>
+          <span
+            key={index}
+            aria-label={`${type[0]} is ${
+              availabilityStatus ? "available" : "not available"
+            } `}
+          >
             {type[0]}
             <Icon
               icon={

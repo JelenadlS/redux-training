@@ -10,7 +10,7 @@ export default function LikeButton({ id }) {
     <>
       <StyledButton
         type="button"
-        aria-label="like button"
+        aria-label={favorites[id] ? "favorite" : "no favorite"}
         onClick={() => dispatch(handleLikeClick(id))}
       >
         <StyledLike
