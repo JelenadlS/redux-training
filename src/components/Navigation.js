@@ -7,7 +7,7 @@ export default function Navigation() {
       <NavLink to="/">
         <button>Home</button>
       </NavLink>
-      <NavLink to="/">
+      <NavLink to="/pictures">
         <button>Pictures</button>
       </NavLink>
       <NavLink to="/">
