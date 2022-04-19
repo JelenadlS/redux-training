@@ -1,7 +1,9 @@
 import { NavLink } from "react-router-dom";
+import { StyledNavigation } from "./styles";
+
 export default function Navigation() {
   return (
-    <nav aria-label="navigation">
+    <StyledNavigation aria-label="navigation">
       <NavLink to="/">
         <button>Home</button>
       </NavLink>
@@ -11,6 +13,6 @@ export default function Navigation() {
       <NavLink to="/">
         <button>About</button>
       </NavLink>
-    </nav>
+    </StyledNavigation>
   );
 }

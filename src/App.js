@@ -1,15 +1,16 @@
 import { Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import HomePage from "./pages/HomePage";
+import { StyledAppGrid } from "./components/styles";
 
 function App() {
   return (
-    <div className="App">
+    <StyledAppGrid className="App">
       <Navigation />
       <Routes>
         <Route path="/" element={<HomePage />} />
       </Routes>
-    </div>
+    </StyledAppGrid>
   );
 }
 
