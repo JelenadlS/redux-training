@@ -11,8 +11,7 @@ export default function PictureButton({ next }) {
     (state) => state.currentPictureReducer.startingIndex
   );
   const arrayLength = Pictures.length;
-  console.log(arrayLength);
-  console.log(currentPicture);
+
   return (
     <StyledButton
       aria-label={`${next ? "next picture" : "previous picture"}`}
