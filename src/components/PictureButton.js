@@ -3,12 +3,15 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { StyledButton } from "./styles";
 import { nextPicture, previousPicture } from "../redux/Slices";
+import Pictures from "./Pictures";
 
 export default function PictureButton({ next }) {
   const dispatch = useDispatch();
   const currentPicture = useSelector(
     (state) => state.currentPictureReducer.startingIndex
   );
+  const arrayLength = Pictures.length;
+  console.log(arrayLength);
   console.log(currentPicture);
   return (
     <StyledButton
@@ -17,6 +20,7 @@ export default function PictureButton({ next }) {
       onClick={() =>
         dispatch((next ? nextPicture : previousPicture)(currentPicture))
       }
+      disabled={currentPicture === (next ? arrayLength - 1 : arrayLength - 9)}
     >
       <Icon
         width="35"
