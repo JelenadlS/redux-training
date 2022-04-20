@@ -1,17 +1,14 @@
 import { StyledMain } from "../components/styles";
 import { AboutText } from "../components/AboutText";
-import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { handleshowMoreInfo } from "../redux/Slices";
 
 export default function AboutPage() {
-  const [showDetails, setShowDetails] = useState({});
+  const dispatch = useDispatch();
+  const show = useSelector(
+    (state) => state.showMoreInfoReducer.listOfCurrentStatus
+  );
 
-  function handleShowDetails(thisDetail) {
-    setShowDetails((prev) => ({
-      ...prev,
-      [thisDetail]: !showDetails[thisDetail],
-    }));
-  }
-  console.log(showDetails);
   return (
     <StyledMain aria-label="about page">
       <h1>about us</h1>
@@ -21,14 +18,11 @@ export default function AboutPage() {
             <h2>{detail.title}</h2>
             <button
               type="button"
-              onClick={() => handleShowDetails(detail.title)}
+              onClick={() => dispatch(handleshowMoreInfo(detail.title))}
             >
               more
             </button>
-            <p
-              aria-label="further information"
-              hidden={!showDetails[detail.title]}
-            >
+            <p aria-label="further information" hidden={!show[detail.title]}>
               {detail.details}
             </p>
           </article>
