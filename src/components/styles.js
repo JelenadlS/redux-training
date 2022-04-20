@@ -52,7 +52,7 @@ export const StyledList = styled.ul`
 `;
 
 export const StyledMain = styled.main`
-  justify-self: center;
+  text-align: center;
 `;
 
 export const StyledModal = styled.section`

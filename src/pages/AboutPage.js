@@ -19,8 +19,11 @@ export default function AboutPage() {
             <button
               type="button"
               onClick={() => dispatch(handleshowMoreInfo(detail.title))}
+              aria-label={
+                !show[detail.title] ? "show more info" : "show less info"
+              }
             >
-              more
+              {!show[detail.title] ? "more" : "less"}
             </button>
             <p aria-label="further information" hidden={!show[detail.title]}>
               {detail.details}
