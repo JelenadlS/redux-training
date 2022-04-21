@@ -13,7 +13,7 @@ export default function PictureButton({ next }) {
     (state) => state.changePictureReducer.initialIndex
   );
   const pictureArrayLength = Pictures.length;
-  console.log(pictureArrayLength);
+
   return (
     <StyledButton
       onClick={() =>

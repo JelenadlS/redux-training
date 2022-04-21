@@ -12,7 +12,6 @@ export default function LoadButton() {
   );
   return (
     <>
-      {" "}
       <button
         onClick={() => dispatch(handleLoadMoreRestaurants(noOfRestaurants))}
       >
