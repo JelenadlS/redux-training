@@ -7,6 +7,11 @@ export const StyledAppGrid = styled.div`
   grid-template-rows: 48px 1fr 48px;
 `;
 
+export const StyledButton = styled.button`
+  border: none;
+  background-color: transparent;
+`;
+
 export const StyledCard = styled.section`
   border: 1px solid grey;
   display: grid;

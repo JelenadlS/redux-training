@@ -21,7 +21,7 @@ export default function Rating({ rating }) {
       (ratingNumber >= 5 ? filledStar : emptyStar),
   ];
   return (
-    <StyledRating>
+    <StyledRating aria-label={`rating of ${ratingNumber}`}>
       {starArray.map((star, index) => {
         return <span key={index}>{star}</span>;
       })}
