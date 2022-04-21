@@ -41,8 +41,16 @@ const restaurantsSlice = createSlice({
 const favoritesSlice = createSlice({
   name: "favorites",
   initialState: { statusListOfLikes: {} },
-  reducers: {},
+  reducers: {
+    handleLikeClick: (state, action) => {
+      const id = action.payload;
+      state.statusListOfLikes[id] = !state.statusListOfLikes[id];
+    },
+  },
 });
+
+export const { handleLikeClick } = favoritesSlice.actions;
+
 export default combineReducers({
   restaurantsReducer: restaurantsSlice.reducer,
   favoritesReducer: favoritesSlice.reducer,

@@ -11,7 +11,7 @@ export default function RestaurantCard({ restaurantDetails }) {
       <p aria-label="name of the restaurant">
         <strong>{restaurantDetails.name}</strong>
       </p>
-      <LikeButton />
+      <LikeButton id={restaurantDetails.id} />
       <Availability availability={restaurantDetails.brewery_type} />
       <p>
         <StyledButton>

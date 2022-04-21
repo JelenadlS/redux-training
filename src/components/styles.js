@@ -38,6 +38,13 @@ export const StyledNavigation = styled.nav`
   gap: 10px;
 `;
 
+export const StyledLike = styled(Icon)`
+  color: ${(props) => (props.color ? "red" : "black")};
+  &:active {
+    transform: scale(0.9);
+  }
+`;
+
 export const StyledList = styled.ul`
   list-style: none;
 `;
