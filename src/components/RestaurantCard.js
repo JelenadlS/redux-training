@@ -1,8 +1,10 @@
 import { Icon } from "@iconify/react";
+import Availability from "./Availability";
 import Rating from "./Rating";
 import { StyledButton, StyledCard } from "./styles";
 
 export default function RestaurantCard({ restaurantDetails }) {
+  console.log(restaurantDetails);
   return (
     <StyledCard>
       <Rating rating={restaurantDetails.phone} />
@@ -14,7 +16,7 @@ export default function RestaurantCard({ restaurantDetails }) {
           <Icon width="35px" height="35px" icon="akar-icons:heart" />
         </StyledButton>
       </p>
-      <p>availability</p>
+      <Availability availability={restaurantDetails.brewery_type} />
       <p>location</p>
     </StyledCard>
   );
