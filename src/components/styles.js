@@ -6,6 +6,13 @@ export const StyledAppGrid = styled.div`
   grid-template-rows: 48px 1fr 48px;
 `;
 
+export const StyledCard = styled.section`
+  border: 1px solid grey;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: repeat(2 auto);
+`;
+
 export const StyledFooter = styled.footer`
   justify-self: center;
 `;
