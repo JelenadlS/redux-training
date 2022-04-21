@@ -63,11 +63,11 @@ const noOfRestaurantsSlice = createSlice({
   reducers: {
     loadMoreRestaurants: (state, action) => {
       const totalAmountLoaded = action.payload;
-      state.limit = totalAmountLoaded + 3;
+      state.limit = totalAmountLoaded + 2;
     },
     loadLessRestaurants: (state, action) => {
       const totalAmountLoaded = action.payload;
-      state.limit = totalAmountLoaded - 3;
+      state.limit = totalAmountLoaded - 2;
     },
   },
 });

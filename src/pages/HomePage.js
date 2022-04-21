@@ -19,8 +19,8 @@ export default function HomePage() {
     dispatch(fetchRestaurants({ limit: noOfRestaurants }));
   }, [dispatch, noOfRestaurants]);
 
-  //if (loading) return <p>Loading...</p>
   console.log(list);
+
   return (
     <StyledMain aria-label="home page">
       <h1>Home page</h1>
