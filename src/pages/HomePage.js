@@ -6,9 +6,7 @@ import { fetchRestaurants } from "../redux/Slices";
 
 export default function HomePage() {
   const dispatch = useDispatch();
-  const restaurantList = useSelector(
-    (state) => state.restaurants.restaurantList
-  );
+  const { restaurantList, loading } = useSelector((state) => state.restaurants);
   console.log(restaurantList);
 
   useEffect(() => {
@@ -19,9 +17,13 @@ export default function HomePage() {
     <StyledMain>
       <h1>Home</h1>
       <ul>
-        {restaurantList.map((restaurant) => {
-          return <li key={restaurant.id}>{restaurant.name}</li>;
-        })}
+        {loading ? (
+          <p>loading ...</p>
+        ) : (
+          restaurantList.map((restaurant) => {
+            return <li key={restaurant.id}>{restaurant.name}</li>;
+          })
+        )}
       </ul>
     </StyledMain>
   );
