@@ -1,12 +1,9 @@
 import { StyledMain, StyledList } from "../components/styles";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-import {
-  fetchRestaurants,
-  loadMoreRestaurants,
-  loadLessRestaurants,
-} from "../redux/Slices";
+import { fetchRestaurants } from "../redux/Slices";
 import RestaurantCard from "../components/RestaurantCard";
+import LoadButtons from "../components/LoadButtons";
 
 export default function HomePage() {
   const dispatch = useDispatch();
@@ -35,20 +32,7 @@ export default function HomePage() {
           })
         )}
       </StyledList>
-      <button
-        type="button"
-        aria-label="load more restaurants"
-        onClick={() => dispatch(loadMoreRestaurants(noOfRestaurants))}
-      >
-        More
-      </button>
-      <button
-        type="button"
-        aria-label="load less restaurants"
-        onClick={() => dispatch(loadLessRestaurants(noOfRestaurants))}
-      >
-        Less
-      </button>
+      <LoadButtons />
     </StyledMain>
   );
 }
