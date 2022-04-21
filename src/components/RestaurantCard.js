@@ -17,7 +17,11 @@ export default function RestaurantCard({ restaurantDetails }) {
         </StyledButton>
       </p>
       <Availability availability={restaurantDetails.brewery_type} />
-      <p>location</p>
+      <p>
+        <StyledButton>
+          <Icon width="35px" height="35px" icon="akar-icons:location" />
+        </StyledButton>
+      </p>
     </StyledCard>
   );
 }
