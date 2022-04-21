@@ -1,6 +1,10 @@
 import { Icon } from "@iconify/react";
 import styled from "styled-components";
 
+export const StyledAddress = styled.p`
+  text-align: center;
+`;
+
 export const StyledAppGrid = styled.div`
   height: 100vh;
   display: grid;
@@ -25,9 +29,28 @@ export const StyledCard = styled.section`
   grid-template-rows: repeat(2 auto);
 `;
 
+export const StyledCloseModalIcon = styled(Icon)`
+  position: absolute;
+  top: -10px;
+  right: -10px;
+`;
+
 export const StyledFooter = styled.footer`
   justify-self: center;
 `;
+
+export const SytledLocationModal = styled.section`
+  border: none;
+  border-radius: 20px;
+  background-color: grey;
+  position: fixed;
+  width: 350px;
+  height: 190px;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+`;
+
 export const StyledMain = styled.main`
   justify-self: center;
 `;

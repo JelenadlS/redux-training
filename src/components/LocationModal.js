@@ -1,4 +1,10 @@
-import { Icon } from "@iconify/react";
+import {
+  SytledLocationModal,
+  StyledCloseModalIcon,
+  StyledButton,
+  StyledAddress,
+} from "./styles";
+
 export default function LocationModal({
   showModal,
   locationData,
@@ -6,22 +12,26 @@ export default function LocationModal({
 }) {
   if (!showModal) return null;
   return (
-    <section>
-      <p>
+    <SytledLocationModal>
+      <StyledAddress>
         {locationData.street}
         <br />
         {locationData.city}
         {locationData.postal_code}
         <br />
         {locationData.state}
-      </p>
-      <button type="button" aria-label="click to close" onClick={handleClose}>
-        <Icon
+      </StyledAddress>
+      <StyledButton
+        type="button"
+        aria-label="click to close"
+        onClick={handleClose}
+      >
+        <StyledCloseModalIcon
           width="35px"
           heigth="35px"
           icon="ant-design:close-circle-outlined"
         />
-      </button>
-    </section>
+      </StyledButton>
+    </SytledLocationModal>
   );
 }
