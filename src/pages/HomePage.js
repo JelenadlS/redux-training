@@ -7,7 +7,9 @@ import { fetchRestaurants } from "../redux/Slices";
 
 export default function HomePage() {
   const dispatch = useDispatch();
-  const { restaurantList, loading } = useSelector((state) => state.restaurants);
+  const { restaurantList, loading } = useSelector(
+    (state) => state.restaurantsReducer
+  );
 
   useEffect(() => {
     dispatch(fetchRestaurants());

@@ -1,4 +1,8 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import {
+  createSlice,
+  createAsyncThunk,
+  combineReducers,
+} from "@reduxjs/toolkit";
 
 export const fetchRestaurants = createAsyncThunk(
   "restaurants/fetchRestaurants",
@@ -34,4 +38,12 @@ const restaurantsSlice = createSlice({
   },
 });
 
-export default restaurantsSlice.reducer;
+const favoritesSlice = createSlice({
+  name: "favorites",
+  initialState: { statusListOfLikes: {} },
+  reducers: {},
+});
+export default combineReducers({
+  restaurantsReducer: restaurantsSlice.reducer,
+  favoritesReducer: favoritesSlice.reducer,
+});
