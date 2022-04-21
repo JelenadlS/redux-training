@@ -1,6 +1,7 @@
+import { useSelector, useDispatch } from "react-redux";
+
 import { StyledMain } from "../components/styles";
 import { AboutText } from "../data/AboutText";
-import { useSelector, useDispatch } from "react-redux";
 import { handleShowDetailsAboutClick } from "../redux/Slices";
 
 export default function AboutPage() {
@@ -8,7 +9,7 @@ export default function AboutPage() {
   const currentState = useSelector(
     (state) => state.showDetailsAboutReducer.showDetailsAbout
   );
-  console.log(currentState);
+
   return (
     <StyledMain>
       <h1>About</h1>

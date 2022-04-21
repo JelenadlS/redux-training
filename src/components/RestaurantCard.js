@@ -1,10 +1,11 @@
 import { Icon } from "@iconify/react";
+import { useState } from "react";
+
 import Availability from "./Availability";
 import LikeButton from "./LikeButton";
 import LocationModal from "./LocationModal";
 import Rating from "./Rating";
 import { StyledButton, StyledCard } from "./styles";
-import { useState } from "react";
 
 export default function RestaurantCard({ restaurantDetails }) {
   const [showModal, setShowModal] = useState(false);

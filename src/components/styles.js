@@ -27,6 +27,7 @@ export const StyledCard = styled.section`
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: repeat(2 auto);
+  margin: 15px;
 `;
 
 export const StyledCloseModalIcon = styled(Icon)`

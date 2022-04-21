@@ -1,10 +1,11 @@
 import { Icon } from "@iconify/react";
+import { useDispatch, useSelector } from "react-redux";
+
 import { StyledButton } from "./styles";
 import {
   handleNextPictureClick,
   handlePreviousPictureClick,
 } from "../redux/Slices";
-import { useDispatch, useSelector } from "react-redux";
 import Pictures from "../data/Pictures";
 
 export default function PictureButton({ next }) {

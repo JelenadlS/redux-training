@@ -1,4 +1,5 @@
 import { Icon } from "@iconify/react";
+
 import { StyledStar, StyledRating } from "./styles";
 
 export default function Rating({ rating }) {

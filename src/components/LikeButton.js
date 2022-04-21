@@ -1,6 +1,7 @@
+import { useDispatch, useSelector } from "react-redux";
+
 import { StyledButton, StyledLike } from "./styles";
 import { handleLikeClick } from "../redux/Slices";
-import { useDispatch, useSelector } from "react-redux";
 
 export default function LikeButton({ id }) {
   const dispatch = useDispatch();

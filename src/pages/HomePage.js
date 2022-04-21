@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+
 import LoadButton from "../components/LoadButton";
 import RestaurantCard from "../components/RestaurantCard";
-import { StyledMain, StyledList } from "../components/styles";
+import { StyledList, StyledMain } from "../components/styles";
 
 import { fetchRestaurants } from "../redux/Slices";
 

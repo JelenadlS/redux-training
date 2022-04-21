@@ -1,7 +1,8 @@
+import { useSelector } from "react-redux";
+
 import PictureButton from "../components/PictureButton";
 import { StyledMain, StyledPictures } from "../components/styles";
 import Pictures from "../data/Pictures";
-import { useSelector } from "react-redux";
 
 export default function PicturePage() {
   const currentPicture = useSelector(
