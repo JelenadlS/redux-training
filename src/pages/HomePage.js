@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import LoadButton from "../components/LoadButton";
 import RestaurantCard from "../components/RestaurantCard";
 import { StyledMain, StyledList } from "../components/styles";
 
@@ -10,10 +11,13 @@ export default function HomePage() {
   const { restaurantList, loading } = useSelector(
     (state) => state.restaurantsReducer
   );
+  const noOfRestaurants = useSelector(
+    (state) => state.loadMoreRestaurantsReducer.startValue
+  );
 
   useEffect(() => {
-    dispatch(fetchRestaurants());
-  }, [dispatch]);
+    dispatch(fetchRestaurants({ startValue: noOfRestaurants }));
+  }, [dispatch, noOfRestaurants]);
 
   return (
     <StyledMain aria-label="home page">
@@ -33,6 +37,7 @@ export default function HomePage() {
             );
           })
         )}
+        <LoadButton />
       </StyledList>
     </StyledMain>
   );

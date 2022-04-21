@@ -3,13 +3,14 @@ import {
   createAsyncThunk,
   combineReducers,
 } from "@reduxjs/toolkit";
+import { act } from "react-dom/test-utils";
 
 export const fetchRestaurants = createAsyncThunk(
   "restaurants/fetchRestaurants",
-  async () => {
+  async ({ startValue }) => {
     try {
       const response = await fetch(
-        `https://api.openbrewerydb.org/breweries`
+        `https://api.openbrewerydb.org/breweries?per_page=${startValue}`
       ).then((data) => data.json());
       return response;
     } catch (error) {
@@ -49,9 +50,26 @@ const favoritesSlice = createSlice({
   },
 });
 
-export const { handleLikeClick } = favoritesSlice.actions;
+const loadMoreRestaurantsSlice = createSlice({
+  name: "loadMoreRestaurants",
+  initialState: { startValue: 3 },
+  reducers: {
+    handleLoadMoreRestaurants: (state, action) => {
+      const loadedRestaurants = action.payload;
+      state.startValue = loadedRestaurants + 2;
+    },
+    handleLoadLessRestaurants: (state, action) => {
+      const loadedRestaurants = action.payload;
+      state.startValue = loadedRestaurants - 2;
+    },
+  },
+});
 
+export const { handleLikeClick } = favoritesSlice.actions;
+export const { handleLoadMoreRestaurants, handleLoadLessRestaurants } =
+  loadMoreRestaurantsSlice.actions;
 export default combineReducers({
   restaurantsReducer: restaurantsSlice.reducer,
   favoritesReducer: favoritesSlice.reducer,
+  loadMoreRestaurantsReducer: loadMoreRestaurantsSlice.reducer,
 });
