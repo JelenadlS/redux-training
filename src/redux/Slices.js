@@ -16,8 +16,19 @@ export const fetchRestaurants = createAsyncThunk(
 
 const restaurantsSlice = createSlice({
   name: "restaurants",
-  initialState: { restaurantList: [] },
-  reducer: {},
+  initialState: { restaurantList: [], status: null },
+  extraReducers: {
+    [fetchRestaurants.pending]: (state, action) => {
+      state.status = "loading";
+    },
+    [fetchRestaurants.fulfilled]: (state, action) => {
+      state.restaurantList = action.payload;
+      state.status = "success";
+    },
+    [fetchRestaurants.rejected]: (state, action) => {
+      state.status = "failed";
+    },
+  },
 });
 
 export default restaurantsSlice.reducer;
