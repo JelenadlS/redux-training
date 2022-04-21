@@ -80,15 +80,29 @@ const changePictureSlice = createSlice({
   },
 });
 
+const showDetailsAboutSlice = createSlice({
+  name: "showDetailsAbout",
+  initialState: { showDetailsAbout: {} },
+  reducers: {
+    handleShowDetailsAboutClick: (state, action) => {
+      const currentState = action.payload;
+      state.showDetailsAbout[currentState] =
+        !state.showDetailsAbout[currentState];
+    },
+  },
+});
+
 export const { handleLikeClick } = favoritesSlice.actions;
 export const { handleLoadMoreRestaurants, handleLoadLessRestaurants } =
   loadMoreRestaurantsSlice.actions;
 export const { handleNextPictureClick, handlePreviousPictureClick } =
   changePictureSlice.actions;
+export const { handleShowDetailsAboutClick } = showDetailsAboutSlice.actions;
 
 export default combineReducers({
   restaurantsReducer: restaurantsSlice.reducer,
   favoritesReducer: favoritesSlice.reducer,
   loadMoreRestaurantsReducer: loadMoreRestaurantsSlice.reducer,
   changePictureReducer: changePictureSlice.reducer,
+  showDetailsAboutReducer: showDetailsAboutSlice.reducer,
 });
