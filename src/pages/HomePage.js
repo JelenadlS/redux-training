@@ -14,11 +14,11 @@ export default function HomePage() {
   const noOfRestaurants = useSelector(
     (state) => state.noOfRestaurantsReducer.limit
   );
-
+  console.log(restaurants);
   useEffect(() => {
     dispatch(fetchRestaurants({ limit: noOfRestaurants }));
   }, [dispatch, noOfRestaurants]);
-
+  console.log(restaurants);
   return (
     <StyledMain aria-label="home page">
       <h1>Home page</h1>

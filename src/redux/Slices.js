@@ -8,9 +8,10 @@ export const fetchRestaurants = createAsyncThunk(
   "restaurants/fetchRestaurants",
   async ({ limit }) => {
     try {
-      return fetch(
+      const result = await fetch(
         `https://api.openbrewerydb.org/breweries?per_page=${limit}`
-      ).then((response) => response.json());
+      ).then((data) => data.json());
+      return result;
     } catch (error) {
       console.log(error);
     }
