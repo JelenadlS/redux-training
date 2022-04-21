@@ -52,7 +52,7 @@ export const SytledLocationModal = styled.section`
 `;
 
 export const StyledMain = styled.main`
-  justify-self: center;
+  text-align: center;
 `;
 
 export const StyledNavigation = styled.nav`
@@ -70,6 +70,13 @@ export const StyledLike = styled(Icon)`
 
 export const StyledList = styled.ul`
   list-style: none;
+`;
+
+export const StyledLogo = styled.img`
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  left: 10px;
 `;
 
 export const StyledPictures = styled.span`
