@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import LoadButton from "../components/LoadButton";
@@ -10,12 +10,12 @@ import { fetchRestaurants } from "../redux/Slices";
 export default function HomePage() {
   const dispatch = useDispatch();
   const { restaurantList, loading } = useSelector(
-    (state) => state.restaurantsReducer
+    useCallback((state) => state.restaurantsReducer, [])
   );
   const noOfRestaurants = useSelector(
-    (state) => state.loadMoreRestaurantsReducer.startValue
+    useCallback((state) => state.loadMoreRestaurantsReducer.startValue, [])
   );
-
+  console.log(restaurantList);
   useEffect(() => {
     dispatch(fetchRestaurants({ startValue: noOfRestaurants }));
   }, [dispatch, noOfRestaurants]);

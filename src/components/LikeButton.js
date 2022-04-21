@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { StyledButton, StyledLike } from "./styles";
@@ -6,7 +7,7 @@ import { handleLikeClick } from "../redux/Slices";
 export default function LikeButton({ id }) {
   const dispatch = useDispatch();
   const favorites = useSelector(
-    (state) => state.favoritesReducer.statusListOfLikes[id]
+    useCallback((state) => state.favoritesReducer.statusListOfLikes[id], [])
   );
 
   return (

@@ -1,4 +1,5 @@
 import { Icon } from "@iconify/react";
+import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { StyledButton } from "./styles";
@@ -11,7 +12,7 @@ import Pictures from "../data/Pictures";
 export default function PictureButton({ next }) {
   const dispatch = useDispatch();
   const currentPicture = useSelector(
-    (state) => state.changePictureReducer.initialIndex
+    useCallback((state) => state.changePictureReducer.initialIndex, [])
   );
   const pictureArrayLength = Pictures.length;
 

@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import {
@@ -9,7 +10,7 @@ export default function LoadButton() {
   const dispatch = useDispatch();
 
   const noOfRestaurants = useSelector(
-    (state) => state.loadMoreRestaurantsReducer.startValue
+    useCallback((state) => state.loadMoreRestaurantsReducer.startValue, [])
   );
   return (
     <>

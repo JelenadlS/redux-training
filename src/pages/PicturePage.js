@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { useSelector } from "react-redux";
 
 import PictureButton from "../components/PictureButton";
@@ -6,7 +7,7 @@ import Pictures from "../data/Pictures";
 
 export default function PicturePage() {
   const currentPicture = useSelector(
-    (state) => state.changePictureReducer.initialIndex
+    useCallback((state) => state.changePictureReducer.initialIndex, [])
   );
   return (
     <StyledMain>

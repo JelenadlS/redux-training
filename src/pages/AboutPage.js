@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { StyledMain } from "../components/styles";
@@ -7,7 +8,7 @@ import { handleShowDetailsAboutClick } from "../redux/Slices";
 export default function AboutPage() {
   const dispatch = useDispatch();
   const currentState = useSelector(
-    (state) => state.showDetailsAboutReducer.showDetailsAbout
+    useCallback((state) => state.showDetailsAboutReducer.showDetailsAbout, [])
   );
 
   return (
