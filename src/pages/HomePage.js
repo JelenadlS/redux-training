@@ -1,3 +1,5 @@
+import { StyledMain } from "../components/styles";
+
 export default function HomePage() {
-  return <div>Home</div>;
+  return <StyledMain>Home</StyledMain>;
 }

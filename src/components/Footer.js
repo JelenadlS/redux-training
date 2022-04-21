@@ -1,3 +1,5 @@
+import { StyledFooter } from "./styles";
+
 export default function Footer() {
-  return <section>copyright by me</section>;
+  return <StyledFooter>copyright by me</StyledFooter>;
 }

@@ -1,8 +1,10 @@
 import { NavLink } from "react-router-dom";
 
+import { StyledNavigation } from "./styles";
+
 export default function Navigation() {
   return (
-    <>
+    <StyledNavigation>
       <NavLink to="/">
         <button>home</button>
       </NavLink>
@@ -12,6 +14,6 @@ export default function Navigation() {
       <NavLink to="/">
         <button>about</button>
       </NavLink>
-    </>
+    </StyledNavigation>
   );
 }
