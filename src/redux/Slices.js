@@ -23,17 +23,21 @@ const restaurantSlice = createSlice({
   initialState: {
     list: [],
     status: null,
+    loading: false,
   },
   extraReducers: {
     [fetchRestaurants.pending]: (state, action) => {
       state.status = "loading";
+      state.loading = true;
     },
     [fetchRestaurants.fulfilled]: (state, action) => {
       state.list = action.payload;
       state.status = "success";
+      state.loading = false;
     },
     [fetchRestaurants.rejected]: (state, action) => {
       state.status = "failed";
+      state.loading = false;
     },
   },
 });
