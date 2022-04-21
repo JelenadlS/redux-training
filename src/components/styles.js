@@ -18,3 +18,7 @@ export const StyledNavigation = styled.nav`
   display: flex;
   gap: 10px;
 `;
+
+export const StyledList = styled.ul`
+  list-style: none;
+`;
