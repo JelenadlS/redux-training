@@ -72,6 +72,12 @@ export const StyledList = styled.ul`
   list-style: none;
 `;
 
+export const StyledPictures = styled.span`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`;
+
 export const StyledRating = styled.p`
   display: flex;
   gap: 5px;
