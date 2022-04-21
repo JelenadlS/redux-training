@@ -80,12 +80,10 @@ const currentPictureSlice = createSlice({
   reducers: {
     nextPicture: (state, action) => {
       const thisPicture = action.payload;
-      console.log(thisPicture);
       state.startingIndex = thisPicture + 1;
     },
     previousPicture: (state, action) => {
       const thisPicture = action.payload;
-      console.log(thisPicture);
       state.startingIndex = thisPicture - 1;
     },
   },

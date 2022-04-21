@@ -5,8 +5,10 @@ import { useCallback } from "react";
 
 export default function LikeButton({ id }) {
   const dispatch = useDispatch();
-  const favorites = useSelector((state) => state.favoritesReducer.data[id]);
-  console.log(favorites);
+  const favorites = useSelector(
+    useCallback((state) => state.favoritesReducer.data[id], [id])
+  );
+
   return (
     <StyledButton
       type="button"

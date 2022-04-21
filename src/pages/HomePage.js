@@ -10,16 +10,14 @@ import RestaurantCard from "../components/RestaurantCard";
 
 export default function HomePage() {
   const dispatch = useDispatch();
+  const { list, loading } = useSelector((state) => state.restaurantsReducer);
   const noOfRestaurants = useSelector(
     (state) => state.noOfRestaurantsReducer.limit
   );
-  const { list, loading } = useSelector((state) => state.restaurantsReducer);
 
   useEffect(() => {
     dispatch(fetchRestaurants({ limit: noOfRestaurants }));
   }, [dispatch, noOfRestaurants]);
-
-  console.log(list);
 
   return (
     <StyledMain aria-label="home page">
@@ -29,7 +27,6 @@ export default function HomePage() {
           <p>loading...</p>
         ) : (
           list.map((restaurant) => {
-            console.log(restaurant);
             return (
               <li key={restaurant.id} aria-label="further details">
                 <RestaurantCard data={restaurant} />
