@@ -65,11 +65,30 @@ const loadMoreRestaurantsSlice = createSlice({
   },
 });
 
+const changePictureSlice = createSlice({
+  name: "changePicture",
+  initialState: { initialIndex: 0 },
+  reducers: {
+    handleNextPictureClick: (state, action) => {
+      const currentPicture = action.payload;
+      state.initialIndex = currentPicture + 1;
+    },
+    handlePreviousPictureClick: (state, action) => {
+      const currentPicture = action.payload;
+      state.initialIndex = currentPicture - 1;
+    },
+  },
+});
+
 export const { handleLikeClick } = favoritesSlice.actions;
 export const { handleLoadMoreRestaurants, handleLoadLessRestaurants } =
   loadMoreRestaurantsSlice.actions;
+export const { handleNextPictureClick, handlePreviousPictureClick } =
+  changePictureSlice.actions;
+
 export default combineReducers({
   restaurantsReducer: restaurantsSlice.reducer,
   favoritesReducer: favoritesSlice.reducer,
   loadMoreRestaurantsReducer: loadMoreRestaurantsSlice.reducer,
+  changePictureReducer: changePictureSlice.reducer,
 });
