@@ -1,9 +1,10 @@
+import Rating from "./Rating";
 import { StyledCard } from "./styles";
 
 export default function RestaurantCard({ restaurantDetails }) {
   return (
     <StyledCard>
-      <p>rating</p>
+      <Rating rating={restaurantDetails.phone} />
       <p>{restaurantDetails.name}</p>
       <p>like</p>
       <p>availability</p>
